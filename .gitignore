@@ -2,6 +2,11 @@
 # Created by https://www.gitignore.io/api/swift,xcode
 # Edit at https://www.gitignore.io/?templates=swift,xcode
 
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
 ### Swift ###
 # Xcode
 #
