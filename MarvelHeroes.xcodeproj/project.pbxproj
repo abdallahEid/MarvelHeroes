@@ -21,6 +21,8 @@
 		BBC136FA22F3768F0004F6DC /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136F822F3768F0004F6DC /* CharacterCell.swift */; };
 		BBC136FB22F3768F0004F6DC /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC136F922F3768F0004F6DC /* CharacterCell.xib */; };
 		BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */; };
+		BBC136FF22F380AD0004F6DC /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136FE22F380AD0004F6DC /* CharacterDetailsViewController.swift */; };
+		BBC1370122F380C90004F6DC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370022F380C90004F6DC /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		BBC136F822F3768F0004F6DC /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		BBC136F922F3768F0004F6DC /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharactersViewController+TableView.swift"; sourceTree = "<group>"; };
+		BBC136FE22F380AD0004F6DC /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
+		BBC1370022F380C90004F6DC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				BBC136F622F374740004F6DC /* CharactersViewController.swift */,
+				BBC1370022F380C90004F6DC /* SearchViewController.swift */,
+				BBC136FE22F380AD0004F6DC /* CharacterDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 				BB59223722F1BAB7007E6ADF /* AppDelegate.swift in Sources */,
 				BBC136ED22F2E6C10004F6DC /* CharacterSourceResponse.swift in Sources */,
 				BBC136FA22F3768F0004F6DC /* CharacterCell.swift in Sources */,
+				BBC136FF22F380AD0004F6DC /* CharacterDetailsViewController.swift in Sources */,
 				BBC136EB22F2E6830004F6DC /* CharacterResponse.swift in Sources */,
+				BBC1370122F380C90004F6DC /* SearchViewController.swift in Sources */,
 				BBC136F722F374740004F6DC /* CharactersViewController.swift in Sources */,
 				BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */,
 				BBC136E722F2E65B0004F6DC /* DataResponse.swift in Sources */,

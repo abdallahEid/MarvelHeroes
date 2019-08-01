@@ -29,5 +29,8 @@ extension CharactersViewController: UITableViewDataSource {
 }
 
 extension CharactersViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let characterDetailsController = storyboard?.instantiateViewController(withIdentifier: "CharacterDetailsViewController") as! CharacterDetailsViewController
+        present(characterDetailsController, animated: true, completion: nil)
+    }
 }

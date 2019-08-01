@@ -33,7 +33,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="xIw-r5-vCf">
-                        <barButtonItem key="rightBarButtonItem" image="icn-nav-search" id="Qfo-eI-kGV"/>
+                        <barButtonItem key="rightBarButtonItem" image="icn-nav-search" id="Qfo-eI-kGV">
+                            <connections>
+                                <segue destination="XnI-nC-jOG" kind="show" id="9pv-ex-f7j"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2a9-az-Wkv" id="T8b-zW-ymt"/>
@@ -42,6 +46,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="100.44642857142857"/>
+        </scene>
+        <!--Character Details View Controller-->
+        <scene sceneID="JuV-Hx-dh2">
+            <objects>
+                <viewController storyboardIdentifier="CharacterDetailsViewController" id="sSL-f1-aaK" customClass="CharacterDetailsViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z0R-xb-bfU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uX6-eV-mVp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fr9-ZW-6b4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="792"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="iJY-FP-oGX">
+            <objects>
+                <viewController id="XnI-nC-jOG" customClass="SearchViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nkk-nl-myQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Rew-21-NRI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Wq-Dt-adY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SJl-9J-Ddl">
