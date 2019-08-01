@@ -23,6 +23,10 @@
 		BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */; };
 		BBC136FF22F380AD0004F6DC /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136FE22F380AD0004F6DC /* CharacterDetailsViewController.swift */; };
 		BBC1370122F380C90004F6DC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370022F380C90004F6DC /* SearchViewController.swift */; };
+		BBC1370322F38B8F0004F6DC /* SearchViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370222F38B8F0004F6DC /* SearchViewController+SearchBar.swift */; };
+		BBC1370522F38BA10004F6DC /* SearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370422F38BA10004F6DC /* SearchViewController+TableView.swift */; };
+		BBC1370822F3A1CF0004F6DC /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370622F3A1CF0004F6DC /* SearchCell.swift */; };
+		BBC1370922F3A1CF0004F6DC /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC1370722F3A1CF0004F6DC /* SearchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharactersViewController+TableView.swift"; sourceTree = "<group>"; };
 		BBC136FE22F380AD0004F6DC /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		BBC1370022F380C90004F6DC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BBC1370222F38B8F0004F6DC /* SearchViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+SearchBar.swift"; sourceTree = "<group>"; };
+		BBC1370422F38BA10004F6DC /* SearchViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+TableView.swift"; sourceTree = "<group>"; };
+		BBC1370622F3A1CF0004F6DC /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		BBC1370722F3A1CF0004F6DC /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,8 @@
 			children = (
 				BBC136F822F3768F0004F6DC /* CharacterCell.swift */,
 				BBC136F922F3768F0004F6DC /* CharacterCell.xib */,
+				BBC1370622F3A1CF0004F6DC /* SearchCell.swift */,
+				BBC1370722F3A1CF0004F6DC /* SearchCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */,
+				BBC1370222F38B8F0004F6DC /* SearchViewController+SearchBar.swift */,
+				BBC1370422F38BA10004F6DC /* SearchViewController+TableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC1370922F3A1CF0004F6DC /* SearchCell.xib in Resources */,
 				BB59224122F1BAB9007E6ADF /* LaunchScreen.storyboard in Resources */,
 				BB59223E22F1BAB9007E6ADF /* Assets.xcassets in Resources */,
 				BB59223C22F1BAB7007E6ADF /* Main.storyboard in Resources */,
@@ -218,12 +231,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC136EF22F2E6D00004F6DC /* Image.swift in Sources */,
+				BBC1370822F3A1CF0004F6DC /* SearchCell.swift in Sources */,
 				BB59223722F1BAB7007E6ADF /* AppDelegate.swift in Sources */,
 				BBC136ED22F2E6C10004F6DC /* CharacterSourceResponse.swift in Sources */,
+				BBC1370322F38B8F0004F6DC /* SearchViewController+SearchBar.swift in Sources */,
 				BBC136FA22F3768F0004F6DC /* CharacterCell.swift in Sources */,
 				BBC136FF22F380AD0004F6DC /* CharacterDetailsViewController.swift in Sources */,
 				BBC136EB22F2E6830004F6DC /* CharacterResponse.swift in Sources */,
 				BBC1370122F380C90004F6DC /* SearchViewController.swift in Sources */,
+				BBC1370522F38BA10004F6DC /* SearchViewController+TableView.swift in Sources */,
 				BBC136F722F374740004F6DC /* CharactersViewController.swift in Sources */,
 				BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */,
 				BBC136E722F2E65B0004F6DC /* DataResponse.swift in Sources */,

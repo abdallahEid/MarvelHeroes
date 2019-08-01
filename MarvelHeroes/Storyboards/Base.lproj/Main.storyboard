@@ -15,12 +15,12 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CharactersViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-az-Wkv">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.17254901960784313" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="xIw-r5-vCf">
                         <barButtonItem key="rightBarButtonItem" image="icn-nav-search" id="Qfo-eI-kGV">
                             <connections>
-                                <segue destination="XnI-nC-jOG" kind="show" id="9pv-ex-f7j"/>
+                                <segue destination="XnI-nC-jOG" kind="show" id="82z-VQ-6Yj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,22 +67,61 @@
             <objects>
                 <viewController id="XnI-nC-jOG" customClass="SearchViewController" customModule="MarvelHeroes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nkk-nl-myQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="mh3-AL-iDM">
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="56"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="90M-YH-LGE">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.17254901959999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biD-zs-vvA">
+                                <rect key="frame" x="334" y="0.0" width="80" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="1YP-6S-wRv"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.15964790239726026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="XnI-nC-jOG" eventType="touchUpInside" id="cc2-HS-WLN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="90M-YH-LGE" secondAttribute="bottom" id="0Sz-Va-odm"/>
+                            <constraint firstItem="mh3-AL-iDM" firstAttribute="leading" secondItem="Rew-21-NRI" secondAttribute="leading" id="Bkt-XS-U5V"/>
+                            <constraint firstItem="90M-YH-LGE" firstAttribute="top" secondItem="mh3-AL-iDM" secondAttribute="bottom" id="H6y-EL-AIy"/>
+                            <constraint firstItem="biD-zs-vvA" firstAttribute="leading" secondItem="mh3-AL-iDM" secondAttribute="trailing" id="MHw-l7-UbM"/>
+                            <constraint firstItem="biD-zs-vvA" firstAttribute="trailing" secondItem="Rew-21-NRI" secondAttribute="trailing" id="aJF-sD-eJZ"/>
+                            <constraint firstItem="90M-YH-LGE" firstAttribute="trailing" secondItem="Rew-21-NRI" secondAttribute="trailing" id="bJh-tp-W00"/>
+                            <constraint firstItem="mh3-AL-iDM" firstAttribute="top" secondItem="Rew-21-NRI" secondAttribute="top" id="gA4-eA-cz7"/>
+                            <constraint firstItem="90M-YH-LGE" firstAttribute="leading" secondItem="Nkk-nl-myQ" secondAttribute="leading" id="iiG-GP-m0v"/>
+                            <constraint firstItem="90M-YH-LGE" firstAttribute="top" secondItem="biD-zs-vvA" secondAttribute="bottom" id="lW5-me-POq"/>
+                            <constraint firstItem="biD-zs-vvA" firstAttribute="top" secondItem="Rew-21-NRI" secondAttribute="top" id="quQ-Av-MgK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rew-21-NRI"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="mh3-AL-iDM" id="Ex6-WC-8yJ"/>
+                        <outlet property="tableView" destination="90M-YH-LGE" id="0wo-3j-eDL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Wq-Dt-adY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="90"/>
+            <point key="canvasLocation" x="1902.8985507246377" y="99.776785714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SJl-9J-Ddl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GEr-9a-ako" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="tY6-KR-gTY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="tY6-KR-gTY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

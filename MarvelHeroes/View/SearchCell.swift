@@ -1,17 +1,17 @@
 //
-//  CharacterCell.swift
+//  SearchCell.swift
 //  MarvelHeroes
 //
-//  Created by Abdallah Eid on 8/1/19.
+//  Created by Abdallah Eid on 8/2/19.
 //  Copyright © 2019 Abdallah Eid. All rights reserved.
 //
 
 import UIKit
 
-class CharacterCell: UITableViewCell {
+class SearchCell: UITableViewCell {
 
+    @IBOutlet weak var characterLabelName: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
-    @IBOutlet weak var characterName: UILabel!
     
     static let reuseIdentifier = String(describing: self)
     static var nib: UINib {

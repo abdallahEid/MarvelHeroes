@@ -23,13 +23,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="345" height="190.5"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-cell-title" translatesAutoresizingMaskIntoConstraints="NO" id="KQQ-Dq-zxe">
-                        <rect key="frame" x="20" y="136" width="138" height="34.5"/>
+                        <rect key="frame" x="20" y="137.5" width="138" height="33"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="KQQ-Dq-zxe" secondAttribute="height" multiplier="4:1" id="kpk-pS-Ccu"/>
+                            <constraint firstAttribute="width" secondItem="KQQ-Dq-zxe" secondAttribute="height" multiplier="4.2:1" id="kpk-pS-Ccu"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6w-kM-OeE">
-                        <rect key="frame" x="20" y="136" width="138" height="34.5"/>
+                        <rect key="frame" x="20" y="137.5" width="138" height="33"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
