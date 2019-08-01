@@ -17,7 +17,10 @@
 		BBC136ED22F2E6C10004F6DC /* CharacterSourceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136EC22F2E6C10004F6DC /* CharacterSourceResponse.swift */; };
 		BBC136EF22F2E6D00004F6DC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136EE22F2E6D00004F6DC /* Image.swift */; };
 		BBC136F322F3631C0004F6DC /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136F222F3631C0004F6DC /* MarvelClient.swift */; };
-		BBC136F722F374740004F6DC /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136F622F374740004F6DC /* CharacterViewController.swift */; };
+		BBC136F722F374740004F6DC /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136F622F374740004F6DC /* CharactersViewController.swift */; };
+		BBC136FA22F3768F0004F6DC /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136F822F3768F0004F6DC /* CharacterCell.swift */; };
+		BBC136FB22F3768F0004F6DC /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC136F922F3768F0004F6DC /* CharacterCell.xib */; };
+		BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,10 @@
 		BBC136EC22F2E6C10004F6DC /* CharacterSourceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSourceResponse.swift; sourceTree = "<group>"; };
 		BBC136EE22F2E6D00004F6DC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		BBC136F222F3631C0004F6DC /* MarvelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
-		BBC136F622F374740004F6DC /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		BBC136F622F374740004F6DC /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		BBC136F822F3768F0004F6DC /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		BBC136F922F3768F0004F6DC /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharactersViewController+TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 		BBC136DE22F2E3630004F6DC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBC136F822F3768F0004F6DC /* CharacterCell.swift */,
+				BBC136F922F3768F0004F6DC /* CharacterCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,7 +109,7 @@
 		BBC136DF22F2E36C0004F6DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BBC136F622F374740004F6DC /* CharacterViewController.swift */,
+				BBC136F622F374740004F6DC /* CharactersViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 		BBC136E122F2E3C20004F6DC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 				BB59224122F1BAB9007E6ADF /* LaunchScreen.storyboard in Resources */,
 				BB59223E22F1BAB9007E6ADF /* Assets.xcassets in Resources */,
 				BB59223C22F1BAB7007E6ADF /* Main.storyboard in Resources */,
+				BBC136FB22F3768F0004F6DC /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +214,10 @@
 				BBC136EF22F2E6D00004F6DC /* Image.swift in Sources */,
 				BB59223722F1BAB7007E6ADF /* AppDelegate.swift in Sources */,
 				BBC136ED22F2E6C10004F6DC /* CharacterSourceResponse.swift in Sources */,
+				BBC136FA22F3768F0004F6DC /* CharacterCell.swift in Sources */,
 				BBC136EB22F2E6830004F6DC /* CharacterResponse.swift in Sources */,
-				BBC136F722F374740004F6DC /* CharacterViewController.swift in Sources */,
+				BBC136F722F374740004F6DC /* CharactersViewController.swift in Sources */,
+				BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */,
 				BBC136E722F2E65B0004F6DC /* DataResponse.swift in Sources */,
 				BBC136E522F2E6210004F6DC /* MarvelResponse.swift in Sources */,
 				BBC136F322F3631C0004F6DC /* MarvelClient.swift in Sources */,
