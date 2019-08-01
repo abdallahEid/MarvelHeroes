@@ -17,6 +17,7 @@
 		BBC136ED22F2E6C10004F6DC /* CharacterSourceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136EC22F2E6C10004F6DC /* CharacterSourceResponse.swift */; };
 		BBC136EF22F2E6D00004F6DC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136EE22F2E6D00004F6DC /* Image.swift */; };
 		BBC136F322F3631C0004F6DC /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136F222F3631C0004F6DC /* MarvelClient.swift */; };
+		BBC136F722F374740004F6DC /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC136F622F374740004F6DC /* CharacterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BBC136EC22F2E6C10004F6DC /* CharacterSourceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSourceResponse.swift; sourceTree = "<group>"; };
 		BBC136EE22F2E6D00004F6DC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		BBC136F222F3631C0004F6DC /* MarvelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
+		BBC136F622F374740004F6DC /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		BBC136DF22F2E36C0004F6DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BBC136F622F374740004F6DC /* CharacterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				BB59223722F1BAB7007E6ADF /* AppDelegate.swift in Sources */,
 				BBC136ED22F2E6C10004F6DC /* CharacterSourceResponse.swift in Sources */,
 				BBC136EB22F2E6830004F6DC /* CharacterResponse.swift in Sources */,
+				BBC136F722F374740004F6DC /* CharacterViewController.swift in Sources */,
 				BBC136E722F2E65B0004F6DC /* DataResponse.swift in Sources */,
 				BBC136E522F2E6210004F6DC /* MarvelResponse.swift in Sources */,
 				BBC136F322F3631C0004F6DC /* MarvelClient.swift in Sources */,
