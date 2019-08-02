@@ -26,7 +26,7 @@ class CharactersViewController: UIViewController {
 
         configureNavbarLogo()
         configureTable()
-        getCharacters()
+        getCharacters(offset: 0)
     }
     
     // MARK: IBAction & Functions
@@ -48,10 +48,12 @@ class CharactersViewController: UIViewController {
         tableView.register(CharacterCell.nib, forCellReuseIdentifier: CharacterCell.reuseIdentifier)
     }
     
-    func getCharacters(){
-        self.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.5))
+    func getCharacters(offset: Int){
+        if offset == 0 {
+             self.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.5))
+        }
         
-        CharactersAPIs().getCharacters(limit: 20, offset: 0, completion: getCharactersCompletion(characters:error:))
+        CharactersAPIs().getCharacters(limit: 20, offset: offset, completion: getCharactersCompletion(characters:error:))
     }
     
     func getCharactersCompletion(characters: [CharacterResponse]?, error: Error?){
@@ -59,7 +61,7 @@ class CharactersViewController: UIViewController {
         guard let characters = characters else {
             return
         }
-        self.characters = characters
+        self.characters += characters
         tableView.reloadData()
     }
 }

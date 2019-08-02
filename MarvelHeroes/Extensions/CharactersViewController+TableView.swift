@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 extension CharactersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -18,13 +19,8 @@ extension CharactersViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterCell.reuseIdentifier ) as! CharacterCell
         
         cell.characterName.text = characters[indexPath.row].name
-        
-        ImageAPIs().downloadImageFrom(url: characters[indexPath.row].thumbnail.url) { (image, error) in
-            if let image = image {
-                cell.characterImageView.image = image
-            }
-        }
-        
+        cell.characterImageView.sd_setImage(with: characters[indexPath.row].thumbnail.url)
+
         return cell
     }
     
@@ -38,5 +34,20 @@ extension CharactersViewController: UITableViewDelegate {
         let characterDetailsController = storyboard?.instantiateViewController(withIdentifier: "CharacterDetailsViewController") as! CharacterDetailsViewController
         
         navigationController?.pushViewController(characterDetailsController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastCharacter = characters.count - 1
+        
+        if indexPath.row == lastCharacter && lastCharacter > 10 {
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.startAnimating()
+            activityIndicator.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(60))
+
+            tableView.tableFooterView = activityIndicator
+            tableView.tableFooterView?.isHidden = false
+            
+            getCharacters(offset: characters.count)
+        }
     }
 }

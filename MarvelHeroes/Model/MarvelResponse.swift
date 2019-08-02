@@ -12,6 +12,10 @@ struct MarvelResponse <DataResponse: Codable> : Codable {
     let code: Int
     let status: String
     let data: DataResponse
-    
-    
+}
+
+extension MarvelResponse: LocalizedError {
+    var errorDescription: String? {
+        return status
+    }
 }
