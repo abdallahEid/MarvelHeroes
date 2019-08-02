@@ -9,7 +9,11 @@
 import Foundation
 
 class MarvelClient{
-    
+
+    static let apiKey = "57f470d09f0b94f6edc325acde1e7884"
+    static let hash = "92da4c1ab014c6e32e5cd41b7d186d0d"
+    static let ts = 1
+
     enum HTTPMethod:String{
         case get = "GET"
         case post = "POST"
@@ -17,18 +21,25 @@ class MarvelClient{
         case delete = "DELETE"
     }
     
-    enum EndPoint{
-        static let baseUrl = ""
-        static let baseApiURL = EndPoint.baseUrl + "/api"
+    enum Endpoints{
+        static let baseUrl = "https://gateway.marvel.com/v1/public"
+        static let apiKeyParam = "?ts=\(MarvelClient.ts)&apikey=\(MarvelClient.apiKey)&hash=\(MarvelClient.hash)"
+        
+        case getCharacters(String?, Int, Int)
+//        case getCharacterSource(String)
         
         var stringValue:String{
             switch self {
-                
+            case .getCharacters(let nameStartsWith, let limit, let offset):
+                return Endpoints.baseUrl + "/characters\(Endpoints.apiKeyParam)&limit=\(limit)&offset=\(offset)" + (nameStartsWith != nil ? "&nameStartsWith=\(nameStartsWith!)": "")
+//            case .getCharacterSource(let query):
+//                return Endpoints.base + "/search/movie" + Endpoints.apiKeyParam + "&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
             }
             
         }
         
         var url:URL{
+            print(stringValue)
             return URL(string: stringValue)!
         }
     }
