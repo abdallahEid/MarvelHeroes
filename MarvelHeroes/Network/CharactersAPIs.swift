@@ -13,7 +13,6 @@ class CharactersAPIs {
     let marvelClient = MarvelClient()
     
     func getCharacters(limit: Int = 20, offset: Int = 0, nameStartsWith: String? = nil , completion: @escaping ([CharacterResponse]?, Error?) -> Void) {
-        print("HIHI", nameStartsWith)
         marvelClient.request(url: MarvelClient.Endpoints.getCharacters(nameStartsWith, limit, offset).url , httpMethod: .get) { (data, response, error) in
             
             guard let data = data else {

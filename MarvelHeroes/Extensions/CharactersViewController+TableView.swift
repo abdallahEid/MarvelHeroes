@@ -25,7 +25,7 @@ extension CharactersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return view.frame.height * 0.28
     }
 }
 
@@ -33,6 +33,7 @@ extension CharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let characterDetailsController = storyboard?.instantiateViewController(withIdentifier: "CharacterDetailsViewController") as! CharacterDetailsViewController
         
+        characterDetailsController.character = characters[indexPath.row]
         navigationController?.pushViewController(characterDetailsController, animated: true)
     }
     

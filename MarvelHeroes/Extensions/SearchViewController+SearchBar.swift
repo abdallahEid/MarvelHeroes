@@ -16,7 +16,6 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func getSearchedCharacters(searchText: String){
-        print("FuckHI", searchText)
         CharactersAPIs().getCharacters(limit: 20, offset: 0, nameStartsWith: searchText,completion: getSearchedCharactersCompletion(characters:error:))
     }
     

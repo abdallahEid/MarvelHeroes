@@ -34,6 +34,7 @@ extension SearchViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let characterDetailsController = storyboard?.instantiateViewController(withIdentifier: "CharacterDetailsViewController") as! CharacterDetailsViewController
         
+        characterDetailsController.character = characters[indexPath.row]
         navigationController?.pushViewController(characterDetailsController, animated: true)
     }
 }
