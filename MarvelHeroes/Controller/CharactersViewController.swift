@@ -49,10 +49,13 @@ class CharactersViewController: UIViewController {
     }
     
     func getCharacters(){
+        self.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.5))
+        
         CharactersAPIs().getCharacters(limit: 20, offset: 0, completion: getCharactersCompletion(characters:error:))
     }
     
     func getCharactersCompletion(characters: [CharacterResponse]?, error: Error?){
+        self.view.activityStopAnimating()
         guard let characters = characters else {
             return
         }
