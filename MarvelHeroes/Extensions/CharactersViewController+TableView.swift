@@ -19,9 +19,9 @@ extension CharactersViewController: UITableViewDataSource {
         
         cell.characterName.text = characters[indexPath.row].name
         
-        CharactersAPIs().downloadImage(url: characters[indexPath.row].thumbnail.url) { (data, error) in
-            if let data = data {
-                cell.characterImageView.image = UIImage(data: data)
+        ImageAPIs().downloadImageFrom(url: characters[indexPath.row].thumbnail.url) { (image, error) in
+            if let image = image {
+                cell.characterImageView.image = image
             }
         }
         

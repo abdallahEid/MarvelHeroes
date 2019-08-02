@@ -20,26 +20,12 @@ class CharactersAPIs {
                 completion(nil, error)
                 return
             }
-
+            
             let marvelResponse = self.marvelClient.decode(type: MarvelResponse<DataResponse<CharacterResponse>>.self, data: data)
 
             completion(marvelResponse?.data.results, nil)
 
         }
         
-    }
-    
-    func downloadImage(url: URL, completion: @escaping (Data?, Error?) -> Void) {
-        print("image", url.absoluteString)
-
-         marvelClient.request(url: url , httpMethod: .get) { (data, response, error) in
-            print("error", error)
-            guard let data = data else {
-                completion(nil, error)
-                return
-            }
-            print("image", data)
-            completion(data, nil)
-        }
     }
 }
