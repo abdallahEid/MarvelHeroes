@@ -11,14 +11,19 @@ import UIKit
 
 extension SearchViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.reuseIdentifier ) as! SearchCell
         
-        cell.characterLabelName.text = "Iron Man"
-        cell.characterImageView.image = UIImage(named: "ironman")
+        cell.characterLabelName.text = characters[indexPath.row].name
+        
+        CharactersAPIs().downloadImage(url: characters[indexPath.row].thumbnail.url) { (data, error) in
+            if let data = data {
+                cell.characterImageView.image = UIImage(data: data)
+            }
+        }
         
         return cell
     }
@@ -31,5 +36,9 @@ extension SearchViewController: UITableViewDataSource{
 }
 
 extension SearchViewController: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let characterDetailsController = storyboard?.instantiateViewController(withIdentifier: "CharacterDetailsViewController") as! CharacterDetailsViewController
+        
+        navigationController?.pushViewController(characterDetailsController, animated: true)
+    }
 }

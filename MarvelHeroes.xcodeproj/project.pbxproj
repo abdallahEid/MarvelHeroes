@@ -27,6 +27,7 @@
 		BBC1370522F38BA10004F6DC /* SearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370422F38BA10004F6DC /* SearchViewController+TableView.swift */; };
 		BBC1370822F3A1CF0004F6DC /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370622F3A1CF0004F6DC /* SearchCell.swift */; };
 		BBC1370922F3A1CF0004F6DC /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC1370722F3A1CF0004F6DC /* SearchCell.xib */; };
+		BBC1370B22F3ABE40004F6DC /* CharactersAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370A22F3ABE40004F6DC /* CharactersAPIs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		BBC1370422F38BA10004F6DC /* SearchViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+TableView.swift"; sourceTree = "<group>"; };
 		BBC1370622F3A1CF0004F6DC /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		BBC1370722F3A1CF0004F6DC /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		BBC1370A22F3ABE40004F6DC /* CharactersAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAPIs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				BBC136F222F3631C0004F6DC /* MarvelClient.swift */,
+				BBC1370A22F3ABE40004F6DC /* CharactersAPIs.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				BBC1370522F38BA10004F6DC /* SearchViewController+TableView.swift in Sources */,
 				BBC136F722F374740004F6DC /* CharactersViewController.swift in Sources */,
 				BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */,
+				BBC1370B22F3ABE40004F6DC /* CharactersAPIs.swift in Sources */,
 				BBC136E722F2E65B0004F6DC /* DataResponse.swift in Sources */,
 				BBC136E522F2E6210004F6DC /* MarvelResponse.swift in Sources */,
 				BBC136F322F3631C0004F6DC /* MarvelClient.swift in Sources */,

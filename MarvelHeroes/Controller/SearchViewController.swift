@@ -15,19 +15,21 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var characters = [CharacterResponse]()
+    
     // MARK: ViewController LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureTable()
-        
+        configureSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        //searchBar.becomeFirstResponder()
+        searchBar.becomeFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,4 +53,9 @@ class SearchViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.register(SearchCell.nib, forCellReuseIdentifier: SearchCell.reuseIdentifier)
     }
+    
+    func configureSearchBar(){
+        searchBar.delegate = self
+    }
+    
 }

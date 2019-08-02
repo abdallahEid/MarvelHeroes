@@ -8,11 +8,15 @@
 
 import Foundation
 
-struct DataResponse : Codable {
+struct DataResponse< Results: Codable > : Codable {
     let offset: Int
     let limit: Int
     let total: Int
     let count: Int
-    let results: Data
+    let results: [Results]
+    
+}
+
+struct Results<T: Codable> : Codable {
     
 }

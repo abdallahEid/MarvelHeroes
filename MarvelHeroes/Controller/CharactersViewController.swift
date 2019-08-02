@@ -17,6 +17,8 @@ class CharactersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var characters = [CharacterResponse]()
+    
     // MARK: ViewController LifeCycle
     
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class CharactersViewController: UIViewController {
 
         configureNavbarLogo()
         configureTable()
+        getCharacters()
     }
     
     // MARK: IBAction & Functions
@@ -43,5 +46,17 @@ class CharactersViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.register(CharacterCell.nib, forCellReuseIdentifier: CharacterCell.reuseIdentifier)
+    }
+    
+    func getCharacters(){
+        CharactersAPIs().getCharacters(limit: 20, offset: 0, completion: getCharactersCompletion(characters:error:))
+    }
+    
+    func getCharactersCompletion(characters: [CharacterResponse]?, error: Error?){
+        guard let characters = characters else {
+            return
+        }
+        self.characters = characters
+        tableView.reloadData()
     }
 }

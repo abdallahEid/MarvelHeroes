@@ -11,14 +11,19 @@ import UIKit
 
 extension CharactersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterCell.reuseIdentifier ) as! CharacterCell
         
-        cell.characterName.text = "Iron Man"
-        cell.characterImageView.image = UIImage(named: "ironman")
+        cell.characterName.text = characters[indexPath.row].name
+        
+        CharactersAPIs().downloadImage(url: characters[indexPath.row].thumbnail.url) { (data, error) in
+            if let data = data {
+                cell.characterImageView.image = UIImage(data: data)
+            }
+        }
         
         return cell
     }

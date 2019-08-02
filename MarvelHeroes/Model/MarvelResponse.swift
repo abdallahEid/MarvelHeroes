@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MarvelResponse: Codable {
+struct MarvelResponse <DataResponse: Codable> : Codable {
     let code: Int
     let status: String
     let data: DataResponse
