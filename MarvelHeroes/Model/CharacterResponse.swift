@@ -9,10 +9,10 @@
 import Foundation
 
 struct CharacterResponse: Codable {
-    var id: Int
-    var thumbnail: Image
+    var id: Int?
+    var thumbnail: Image?
     
-    let name: String
-    let description: String
-    let resourceURI: String
+    let name: String?
+    let description: String?
+    let resourceURI: String?
 }

@@ -26,14 +26,11 @@ class MarvelClient{
         static let apiKeyParam = "?ts=\(MarvelClient.ts)&apikey=\(MarvelClient.apiKey)&hash=\(MarvelClient.hash)"
         
         case getCharacters(String?, Int, Int)
-//        case getCharacterSource(String)
         
         var stringValue:String{
             switch self {
             case .getCharacters(let nameStartsWith, let limit, let offset):
                 return Endpoints.baseUrl + "/characters\(Endpoints.apiKeyParam)&limit=\(limit)&offset=\(offset)" + (nameStartsWith != nil ? "&nameStartsWith=\(nameStartsWith!)": "")
-//            case .getCharacterSource(let query):
-//                return Endpoints.base + "/search/movie" + Endpoints.apiKeyParam + "&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
             }
             
         }

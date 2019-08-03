@@ -18,7 +18,7 @@ extension SearchViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.reuseIdentifier ) as! SearchCell
         
         cell.characterLabelName.text = characters[indexPath.row].name
-        cell.characterImageView.sd_setImage(with: characters[indexPath.row].thumbnail.url)
+        cell.characterImageView.sd_setImage(with: characters[indexPath.row].thumbnail?.url)
         
         return cell
     }

@@ -16,9 +16,10 @@ enum CharacterSourceType: String {
 }
 
 struct CharacterSourceResponse: Codable {
-    var id: Int
-    var thumbnail: Image
+    var id: Int?
+    var thumbnail: Image?
 
-    let title: String
-    let images: [Image]
+    let title: String?
+    let images: [Image]?
+    let resourceURI: String?
 }

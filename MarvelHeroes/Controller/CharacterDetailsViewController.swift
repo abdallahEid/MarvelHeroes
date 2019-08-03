@@ -16,8 +16,14 @@ class CharacterDetailsViewController: UIViewController {
     @IBOutlet weak var bluredImageView: UIImageView!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterDescriptionLabel: UILabel!
+    @IBOutlet weak var comicsCollectionView: UICollectionView!
+    @IBOutlet weak var seriesCollectionView: UICollectionView!
+    @IBOutlet weak var eventsCollectionView: UICollectionView!
+    @IBOutlet weak var storiesCollectionView: UICollectionView!
     
     var character: CharacterResponse?
+    var currentSource = ""
+    var sources = ["comics" : [CharacterSourceResponse](), "series" : [CharacterSourceResponse](), "stories" : [CharacterSourceResponse](), "events" : [CharacterSourceResponse]()]
     
     // MARK: ViewController LifeCycle
     
@@ -26,6 +32,12 @@ class CharacterDetailsViewController: UIViewController {
 
         addBlurBackground()
         configureCharacter()
+        configureCollectionView(collectionView: comicsCollectionView)
+        configureCollectionView(collectionView: seriesCollectionView)
+        configureCollectionView(collectionView: eventsCollectionView)
+        configureCollectionView(collectionView: storiesCollectionView)
+        getCharacterSources()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +63,12 @@ class CharacterDetailsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func getCharacterSources(){
+        for (key, _) in sources {
+            getCharacterSource(source: key)
+        }
+    }
+    
     func addBlurBackground(){
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -62,9 +80,42 @@ class CharacterDetailsViewController: UIViewController {
     func configureCharacter(){
         characterNameLabel.text = character?.name
         characterDescriptionLabel.text = character?.description
-        characterImageView.sd_setImage(with: character?.thumbnail.url)
-        bluredImageView.sd_setImage(with: character?.thumbnail.url)
+        characterImageView.sd_setImage(with: character?.thumbnail?.url)
+        bluredImageView.sd_setImage(with: character?.thumbnail?.url)
         bluredImageView.alpha = 0.2
     }
+    
+    func configureCollectionView(collectionView: UICollectionView){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(CharacterSourceCell.nib, forCellWithReuseIdentifier: CharacterSourceCell.reuseIdentifier)
+    }
+    
+    
+    func getCharacterSource(source: String){
+        if var urlString = character?.resourceURI {
 
+            urlString += "/\(source)" + MarvelClient.Endpoints.apiKeyParam
+            if let url = URL(string: urlString){
+
+                CharactersAPIs().getCharacterSource(url: url) { (charactersSource, error) in
+                    guard let charactersSource = charactersSource else {
+                        return
+                    }
+                    self.sources[source] = charactersSource
+                    self.currentSource = source
+                    if source == "comics"{
+                        self.comicsCollectionView.reloadData()
+                    } else if source == "series"{
+                        self.seriesCollectionView.reloadData()
+                    } else if source == "stories"{
+                        self.storiesCollectionView.reloadData()
+                    } else if source == "events"{
+                        self.eventsCollectionView.reloadData()
+                    }
+                }
+            }
+        }
+       
+    }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,9 @@
 		BBC1370B22F3ABE40004F6DC /* CharactersAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1370A22F3ABE40004F6DC /* CharactersAPIs.swift */; };
 		BBEF434422F462BC006997C0 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF434322F462BC006997C0 /* ActivityIndicator.swift */; };
 		BBEF434822F47ED8006997C0 /* ImageAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF434722F47ED8006997C0 /* ImageAPIs.swift */; };
+		BBEF434B22F4FD72006997C0 /* CharacterSourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF434922F4FD72006997C0 /* CharacterSourceCell.swift */; };
+		BBEF434C22F4FD72006997C0 /* CharacterSourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBEF434A22F4FD72006997C0 /* CharacterSourceCell.xib */; };
+		BBEF434E22F4FDD2006997C0 /* CharacterDetailsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF434D22F4FDD2006997C0 /* CharacterDetailsViewController+CollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		BBC1370A22F3ABE40004F6DC /* CharactersAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAPIs.swift; sourceTree = "<group>"; };
 		BBEF434322F462BC006997C0 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		BBEF434722F47ED8006997C0 /* ImageAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIs.swift; sourceTree = "<group>"; };
+		BBEF434922F4FD72006997C0 /* CharacterSourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSourceCell.swift; sourceTree = "<group>"; };
+		BBEF434A22F4FD72006997C0 /* CharacterSourceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterSourceCell.xib; sourceTree = "<group>"; };
+		BBEF434D22F4FDD2006997C0 /* CharacterDetailsViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterDetailsViewController+CollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,8 @@
 				BBC136F922F3768F0004F6DC /* CharacterCell.xib */,
 				BBC1370622F3A1CF0004F6DC /* SearchCell.swift */,
 				BBC1370722F3A1CF0004F6DC /* SearchCell.xib */,
+				BBEF434922F4FD72006997C0 /* CharacterSourceCell.swift */,
+				BBEF434A22F4FD72006997C0 /* CharacterSourceCell.xib */,
 				BBEF434322F462BC006997C0 /* ActivityIndicator.swift */,
 			);
 			path = View;
@@ -167,6 +175,7 @@
 				BBC136FC22F379F70004F6DC /* CharactersViewController+TableView.swift */,
 				BBC1370222F38B8F0004F6DC /* SearchViewController+SearchBar.swift */,
 				BBC1370422F38BA10004F6DC /* SearchViewController+TableView.swift */,
+				BBEF434D22F4FDD2006997C0 /* CharacterDetailsViewController+CollectionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,7 +196,6 @@
 				3282611C984DDC6ACC5B8F90 /* Pods-MarvelHeroes.debug.xcconfig */,
 				253FDC800DE874F79D6AD60B /* Pods-MarvelHeroes.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -253,6 +261,7 @@
 			files = (
 				BBC1370922F3A1CF0004F6DC /* SearchCell.xib in Resources */,
 				BB59224122F1BAB9007E6ADF /* LaunchScreen.storyboard in Resources */,
+				BBEF434C22F4FD72006997C0 /* CharacterSourceCell.xib in Resources */,
 				BB59223E22F1BAB9007E6ADF /* Assets.xcassets in Resources */,
 				BB59223C22F1BAB7007E6ADF /* Main.storyboard in Resources */,
 				BBC136FB22F3768F0004F6DC /* CharacterCell.xib in Resources */,
@@ -314,6 +323,8 @@
 				BB59223722F1BAB7007E6ADF /* AppDelegate.swift in Sources */,
 				BBC136ED22F2E6C10004F6DC /* CharacterSourceResponse.swift in Sources */,
 				BBC1370322F38B8F0004F6DC /* SearchViewController+SearchBar.swift in Sources */,
+				BBEF434E22F4FDD2006997C0 /* CharacterDetailsViewController+CollectionView.swift in Sources */,
+				BBEF434B22F4FD72006997C0 /* CharacterSourceCell.swift in Sources */,
 				BBC136FA22F3768F0004F6DC /* CharacterCell.swift in Sources */,
 				BBC136FF22F380AD0004F6DC /* CharacterDetailsViewController.swift in Sources */,
 				BBC136EB22F2E6830004F6DC /* CharacterResponse.swift in Sources */,

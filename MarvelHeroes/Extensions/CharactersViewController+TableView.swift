@@ -19,7 +19,7 @@ extension CharactersViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterCell.reuseIdentifier ) as! CharacterCell
         
         cell.characterName.text = characters[indexPath.row].name
-        cell.characterImageView.sd_setImage(with: characters[indexPath.row].thumbnail.url)
+        cell.characterImageView.sd_setImage(with: characters[indexPath.row].thumbnail?.url)
 
         return cell
     }
