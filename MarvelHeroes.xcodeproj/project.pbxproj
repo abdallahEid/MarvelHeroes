@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		895BD83DC0C4FA6C60813EA7 /* Pods_MarvelHeroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3F349AB86AC7A757900847 /* Pods_MarvelHeroes.framework */; };
+		BB23C56B22F5D4B200574B5E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB23C56A22F5D4B200574B5E /* Reachability.swift */; };
+		BB23C56D22F5D57000574B5E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB23C56C22F5D57000574B5E /* UIViewController.swift */; };
 		BB59223722F1BAB7007E6ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB59223622F1BAB7007E6ADF /* AppDelegate.swift */; };
 		BB59223C22F1BAB7007E6ADF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB59223A22F1BAB7007E6ADF /* Main.storyboard */; };
 		BB59223E22F1BAB9007E6ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB59223D22F1BAB9007E6ADF /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		253FDC800DE874F79D6AD60B /* Pods-MarvelHeroes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes.release.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes/Pods-MarvelHeroes.release.xcconfig"; sourceTree = "<group>"; };
 		3282611C984DDC6ACC5B8F90 /* Pods-MarvelHeroes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes/Pods-MarvelHeroes.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3F349AB86AC7A757900847 /* Pods_MarvelHeroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelHeroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB23C56A22F5D4B200574B5E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		BB23C56C22F5D57000574B5E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BB59223322F1BAB7007E6ADF /* MarvelHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB59223622F1BAB7007E6ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB59223B22F1BAB7007E6ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				BBC1370422F38BA10004F6DC /* SearchViewController+TableView.swift */,
 				BBEF434D22F4FDD2006997C0 /* CharacterDetailsViewController+CollectionView.swift */,
 				BBEF435122F54189006997C0 /* ImageSliderViewController+CollectionView.swift */,
+				BB23C56C22F5D57000574B5E /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				BBC136F222F3631C0004F6DC /* MarvelClient.swift */,
 				BBC1370A22F3ABE40004F6DC /* CharactersAPIs.swift */,
 				BBEF434722F47ED8006997C0 /* ImageAPIs.swift */,
+				BB23C56A22F5D4B200574B5E /* Reachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -338,7 +344,9 @@
 				BBC136EB22F2E6830004F6DC /* CharacterResponse.swift in Sources */,
 				BBC1370122F380C90004F6DC /* SearchViewController.swift in Sources */,
 				BBC1370522F38BA10004F6DC /* SearchViewController+TableView.swift in Sources */,
+				BB23C56D22F5D57000574B5E /* UIViewController.swift in Sources */,
 				BBC136F722F374740004F6DC /* CharactersViewController.swift in Sources */,
+				BB23C56B22F5D4B200574B5E /* Reachability.swift in Sources */,
 				BBC136FD22F379F70004F6DC /* CharactersViewController+TableView.swift in Sources */,
 				BBC1370B22F3ABE40004F6DC /* CharactersAPIs.swift in Sources */,
 				BBC136E722F2E65B0004F6DC /* DataResponse.swift in Sources */,

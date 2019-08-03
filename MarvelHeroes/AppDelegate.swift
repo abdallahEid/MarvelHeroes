@@ -12,10 +12,38 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    let reachability = Reachability()!
+    static var isConnectedToInternet:Bool?
+    
+    func checkInternetConnection(){
+        reachability.whenReachable = { reachability in
+            AppDelegate.isConnectedToInternet = true
+            if reachability.connection == .wifi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            print("Not reachable")
+            AppDelegate.isConnectedToInternet = false
+            var vc = self.window?.rootViewController
+            while (vc?.presentedViewController != nil)
+            {
+                vc = vc?.presentedViewController
+            }
+            vc?.showAlert(title: "No Internet", message: "Please, check your interner connection")
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        checkInternetConnection()
         return true
     }
 
