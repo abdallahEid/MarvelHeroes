@@ -10,6 +10,8 @@
  */
 
 import UIKit
+import CoreData
+import SDWebImage
 
 class CharactersViewController: UIViewController {
 
@@ -17,6 +19,7 @@ class CharactersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var dataController = DataController(modelName: "MarvelHeroes")
     var characters = [CharacterResponse]()
     
     // MARK: ViewController LifeCycle
@@ -26,7 +29,13 @@ class CharactersViewController: UIViewController {
 
         configureNavbarLogo()
         configureTable()
-        getCharacters(offset: 0)
+        
+        if Reachability()!.isReachable {
+            deleteFromCoreData()
+            getCharacters(offset: 0)
+        } else {
+            loadFromCoreData()
+        }
     }
     
     // MARK: IBAction & Functions
@@ -50,7 +59,7 @@ class CharactersViewController: UIViewController {
     
     func getCharacters(offset: Int){
         if offset == 0 {
-             self.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.5))
+            self.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.5))
         }
         
         CharactersAPIs().getCharacters(limit: 20, offset: offset, completion: getCharactersCompletion(characters:error:))
@@ -62,6 +71,49 @@ class CharactersViewController: UIViewController {
             return
         }
         self.characters += characters
+        if self.characters.count == 20 {
+            addToCoreData(characters: characters)
+        }
         tableView.reloadData()
+    }
+    
+    func addToCoreData(characters: [CharacterResponse]){
+        print("LAA")
+
+        for item in characters {
+            let character = CharacterData(context: dataController.viewContext)
+            character.name = item.name
+            if let thumbnail = item.thumbnail {
+                character.url = thumbnail.path
+                ImageAPIs().downloadImageFrom(url: thumbnail.url) { (data, error) in
+                    if let data = data {
+                        character.image = data
+                        try? self.dataController.viewContext.save()
+                    }
+                }
+            }
+        }
+    }
+    
+    func deleteFromCoreData() {
+        print("LA")
+        let fetchRequest:NSFetchRequest<CharacterData> = CharacterData.fetchRequest()
+        if let results = try? dataController.viewContext.fetch(fetchRequest) {
+            for result in results {
+                dataController.viewContext.delete(result)
+            }
+            try? self.dataController.viewContext.save()
+        }
+    }
+    
+    func loadFromCoreData() {
+        let fetchRequest:NSFetchRequest<CharacterData> = CharacterData.fetchRequest()
+        if let results = try? dataController.viewContext.fetch(fetchRequest) {
+            for result in results {
+                let character = CharacterResponse(name: result.name ?? "", imageData: result.image ?? Data())
+                characters.append(character)
+            }
+            tableView.reloadData()
+        }
     }
 }

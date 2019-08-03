@@ -80,8 +80,14 @@ class CharacterDetailsViewController: UIViewController {
     func configureCharacter(){
         characterNameLabel.text = character?.name
         characterDescriptionLabel.text = character?.description
-        characterImageView.sd_setImage(with: character?.thumbnail?.url)
-        bluredImageView.sd_setImage(with: character?.thumbnail?.url)
+//        characterImageView.sd_setImage(with: character?.thumbnail?.url)
+        if let thumbnail = character?.thumbnail {
+            characterImageView.sd_setImage(with: thumbnail.url)
+            bluredImageView.sd_setImage(with: thumbnail.url)
+        } else {
+            characterImageView.image = UIImage(data: (character?.imageData)!)
+            bluredImageView.image = UIImage(data: (character?.imageData)!)
+        }
         bluredImageView.alpha = 0.2
     }
     

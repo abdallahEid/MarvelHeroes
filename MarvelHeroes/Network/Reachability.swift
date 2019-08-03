@@ -145,6 +145,7 @@ public class Reachability {
     deinit {
         stopNotifier()
     }
+    
 }
 
 public extension Reachability {

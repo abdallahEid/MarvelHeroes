@@ -19,7 +19,11 @@ extension CharactersViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterCell.reuseIdentifier ) as! CharacterCell
         
         cell.characterName.text = characters[indexPath.row].name
-        cell.characterImageView.sd_setImage(with: characters[indexPath.row].thumbnail?.url)
+        if let thumbnail = characters[indexPath.row].thumbnail {
+            cell.characterImageView.sd_setImage(with: thumbnail.url)
+        } else {
+            cell.characterImageView.image = UIImage(data: characters[indexPath.row].imageData!)
+        }
 
         return cell
     }
@@ -40,7 +44,7 @@ extension CharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastCharacter = characters.count - 1
         
-        if indexPath.row == lastCharacter && lastCharacter > 15 {
+        if indexPath.row == lastCharacter && lastCharacter > 15 && (AppDelegate.isConnectedToInternet ?? true) {
             let activityIndicator = UIActivityIndicatorView()
             activityIndicator.startAnimating()
             activityIndicator.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(60))

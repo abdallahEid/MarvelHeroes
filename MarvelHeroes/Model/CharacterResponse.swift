@@ -13,6 +13,12 @@ struct CharacterResponse: Codable {
     var thumbnail: Image?
     
     let name: String?
-    let description: String?
-    let resourceURI: String?
+    var description: String?
+    var resourceURI: String?
+    let imageData: Data?
+    
+    init(name: String, imageData: Data) {
+        self.name = name
+        self.imageData = imageData
+    }
 }
