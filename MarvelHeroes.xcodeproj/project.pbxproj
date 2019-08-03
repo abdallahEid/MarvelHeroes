@@ -239,6 +239,7 @@
 				TargetAttributes = {
 					BB59223222F1BAB7007E6ADF = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -501,7 +502,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vezeeta.MarvelHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -521,7 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vezeeta.MarvelHeroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
