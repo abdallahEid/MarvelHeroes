@@ -65,7 +65,7 @@ class CharacterDetailsViewController: UIViewController {
     
     func getCharacterSources(){
         for (key, _) in sources {
-            getCharacterSource(source: key)
+            getCharacterSource(source: key, offset: 0)
         }
     }
     
@@ -92,17 +92,17 @@ class CharacterDetailsViewController: UIViewController {
     }
     
     
-    func getCharacterSource(source: String){
+    func getCharacterSource(source: String, offset: Int){
         if var urlString = character?.resourceURI {
 
-            urlString += "/\(source)" + MarvelClient.Endpoints.apiKeyParam
+            urlString += "/\(source)\(MarvelClient.Endpoints.apiKeyParam)&limit=10&offset=\(offset)"
             if let url = URL(string: urlString){
-
+                print("Zer", urlString)
                 CharactersAPIs().getCharacterSource(url: url) { (charactersSource, error) in
                     guard let charactersSource = charactersSource else {
                         return
                     }
-                    self.sources[source] = charactersSource
+                    self.sources[source]?.append(contentsOf: charactersSource) 
                     self.currentSource = source
                     if source == "comics"{
                         self.comicsCollectionView.reloadData()

@@ -52,6 +52,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="notFound" width="600" height="337.5"/>
+        <image name="notFound" width="112.5" height="112.5"/>
     </resources>
 </document>

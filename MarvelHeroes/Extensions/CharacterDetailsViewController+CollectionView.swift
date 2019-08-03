@@ -41,6 +41,8 @@ extension CharacterDetailsViewController: UICollectionViewDataSource{
     
     func putDataInCell(source: String, cell: CharacterSourceCell, indexPath: IndexPath){
         cell.sourceNameLabel.text = sources[source]![indexPath.row].title
+        cell.sourceImageView.sd_imageIndicator = SDWebImageActivityIndicator.white
+        
         if let image = sources[source]![indexPath.row].thumbnail {
             cell.sourceImageView.sd_setImage(with: image.url)
         } else {
@@ -50,5 +52,51 @@ extension CharacterDetailsViewController: UICollectionViewDataSource{
 }
 
 extension CharacterDetailsViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let imageSliderViewController = storyboard?.instantiateViewController(withIdentifier: "ImageSliderViewController") as! ImageSliderViewController
+        
+        if collectionView == comicsCollectionView {
+            imageSliderViewController.selectedSource = "comics"
+        } else if collectionView == seriesCollectionView {
+            imageSliderViewController.selectedSource = "series"
+        } else if collectionView == storiesCollectionView {
+            imageSliderViewController.selectedSource = "stories"
+        } else if collectionView == eventsCollectionView {
+            imageSliderViewController.selectedSource = "events"
+        }
+        imageSliderViewController.sources = sources
+        imageSliderViewController.indexPath = indexPath
 
+        present(imageSliderViewController, animated: true) 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        var lastSource = 0
+        
+        if collectionView == comicsCollectionView {
+            lastSource = sources["comics"]!.count
+        } else if collectionView == seriesCollectionView {
+            lastSource = sources["series"]!.count
+        } else if collectionView == storiesCollectionView {
+            lastSource = sources["stories"]!.count
+        } else if collectionView == eventsCollectionView {
+            lastSource = sources["events"]!.count
+        }
+        print(lastSource, "last", indexPath.row)
+
+        if indexPath.row == lastSource - 1 && lastSource > 5 {
+            print(lastSource, "last")
+
+            if collectionView == comicsCollectionView {
+                getCharacterSource(source: "comics", offset: lastSource)
+            } else if collectionView == seriesCollectionView {
+                getCharacterSource(source: "series", offset: lastSource)
+            } else if collectionView == storiesCollectionView {
+                getCharacterSource(source: "stories", offset: lastSource)
+            } else if collectionView == eventsCollectionView {
+                getCharacterSource(source: "events", offset: lastSource)
+            }
+        }
+    }
 }

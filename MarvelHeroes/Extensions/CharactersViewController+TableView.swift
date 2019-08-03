@@ -40,7 +40,7 @@ extension CharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastCharacter = characters.count - 1
         
-        if indexPath.row == lastCharacter && lastCharacter > 10 {
+        if indexPath.row == lastCharacter && lastCharacter > 15 {
             let activityIndicator = UIActivityIndicatorView()
             activityIndicator.startAnimating()
             activityIndicator.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(60))
