@@ -13,10 +13,5 @@ struct DataResponse< Results: Codable > : Codable {
     let limit: Int
     let total: Int
     let count: Int
-    let results: [Results]
-    
-}
-
-struct Results<T: Codable> : Codable {
-    
+    let results: [Results] // Results is a generic type to handle the response of get characters and get character sources ( comics, series, ... )
 }

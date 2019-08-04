@@ -19,7 +19,6 @@ class ImageAPIs {
                 completion(nil, error)
                 return
             }
-            print("Downloaded", url.absoluteString)
             completion(data, nil)
         }
         

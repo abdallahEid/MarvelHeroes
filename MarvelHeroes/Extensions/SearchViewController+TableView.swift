@@ -18,7 +18,9 @@ extension SearchViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.reuseIdentifier ) as! SearchCell
         
         cell.characterLabelName.text = characters[indexPath.row].name
-        cell.characterImageView.sd_setImage(with: characters[indexPath.row].thumbnail?.url)
+        DispatchQueue.main.async {
+            cell.characterImageView.sd_setImage(with: self.characters[indexPath.row].thumbnail?.url)
+        }
         
         return cell
     }
@@ -26,12 +28,11 @@ extension SearchViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
-    
-    
 }
 
 extension SearchViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let characterDetailsController = storyboard?.instantiateViewController(withIdentifier: "CharacterDetailsViewController") as! CharacterDetailsViewController
         
         characterDetailsController.character = characters[indexPath.row]

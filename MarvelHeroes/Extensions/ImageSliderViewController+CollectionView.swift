@@ -12,25 +12,27 @@ import SDWebImage
 
 extension ImageSliderViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sources[selectedSource]!.count
+        return source.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterSourceCell.reuseIdentifier, for: indexPath) as! CharacterSourceCell
         
-        cell.sourceNameLabel.text = sources[selectedSource]![indexPath.row].title
-        if let image = sources[selectedSource]![indexPath.row].thumbnail {
-            cell.sourceImageView.sd_setImage(with: image.url)
-        } else {
-            cell.sourceImageView.image = UIImage(named: "notFound")
+        cell.sourceNameLabel.text = source[indexPath.row].title
+        DispatchQueue.main.async {
+            if let image = self.source[indexPath.row].thumbnail {
+                cell.sourceImageView.sd_setImage(with: image.url)
+            } else {
+                cell.sourceImageView.image = UIImage(named: "notFound")
+            }
         }
-       
+           
         return cell
     }
 }
 
 extension ImageSliderViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        currentSlideLabel.text = "\(indexPath.row)/\(sources[selectedSource]!.count)"
+        currentSlideLabel.text = "\(indexPath.row)/\(source.count)"
     }
 }
