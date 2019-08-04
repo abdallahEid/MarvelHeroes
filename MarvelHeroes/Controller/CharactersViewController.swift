@@ -19,7 +19,7 @@ class CharactersViewController: UIViewController {
     // MARK: IBOutlets & Properties
     @IBOutlet weak var tableView: UITableView!
     
-    var dataController = DataController(modelName: "MarvelHeroes")
+    var dataController: DataController!
     var characters = [CharacterResponse]()
     
     // MARK: ViewController LifeCycle
@@ -32,7 +32,7 @@ class CharactersViewController: UIViewController {
     }
     
     // MARK: IBAction & Functions
-    func configureNavbarLogo(){
+    private func configureNavbarLogo(){
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 35))
         imageView.contentMode = .scaleAspectFit
         
@@ -42,7 +42,7 @@ class CharactersViewController: UIViewController {
         navigationItem.titleView = imageView
     }
     
-    func configureTable(){
+    private func configureTable(){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -57,7 +57,7 @@ class CharactersViewController: UIViewController {
         CharactersAPIs().getCharacters(limit: 20, offset: offset, completion: getCharactersCompletion(characters:error:))
     }
     
-    func getCharactersCompletion(characters: [CharacterResponse]?, error: Error?){
+    private func getCharactersCompletion(characters: [CharacterResponse]?, error: Error?){
         self.view.activityStopAnimating()
         guard let characters = characters else {
             return
@@ -69,7 +69,7 @@ class CharactersViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func DetermineGettingDataFromInternetOrCoreData(){
+    private func DetermineGettingDataFromInternetOrCoreData(){
         if Reachability()!.isReachable {
             deleteFromCoreData()
             getCharacters(offset: 0)

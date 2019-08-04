@@ -18,8 +18,8 @@ extension CharactersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterCell.reuseIdentifier ) as! CharacterCell
         
-        cell.characterName.text = characters[indexPath.row].name
         DispatchQueue.main.async {
+            cell.characterName.text = self.characters[indexPath.row].name
             if let thumbnail = self.characters[indexPath.row].thumbnail {
                 cell.characterImageView.sd_setImage(with: thumbnail.url)
             } else {

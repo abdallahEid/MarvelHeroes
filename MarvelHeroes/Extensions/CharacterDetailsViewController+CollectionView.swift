@@ -17,9 +17,9 @@ extension CharacterDetailsViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterSourceCell.reuseIdentifier, for: indexPath) as! CharacterSourceCell
-        cell.sourceNameLabel.text = collectionView.sourceArray[indexPath.row].title
-        cell.sourceImageView.sd_imageIndicator = SDWebImageActivityIndicator.white
         DispatchQueue.main.async {
+            cell.sourceNameLabel.text = collectionView.sourceArray[indexPath.row].title
+            cell.sourceImageView.sd_imageIndicator = SDWebImageActivityIndicator.white
             if let image = collectionView.sourceArray[indexPath.row].thumbnail {
                 cell.sourceImageView.sd_setImage(with: image.url)
             } else {

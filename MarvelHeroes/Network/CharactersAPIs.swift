@@ -10,7 +10,7 @@ import Foundation
 
 class CharactersAPIs {
     
-    let marvelClient = MarvelClient()
+    private let marvelClient = MarvelClient()
     
     func getCharacters(limit: Int = 20, offset: Int = 0, nameStartsWith: String? = nil , completion: @escaping ([CharacterResponse]?, Error?) -> Void) {
         marvelClient.request(url: MarvelClient.Endpoints.getCharacters(nameStartsWith, limit, offset).url , httpMethod: .get) { (data, response, error) in

@@ -51,14 +51,14 @@ class SearchViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func configureTable(){
+    private func configureTable(){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.register(SearchCell.nib, forCellReuseIdentifier: SearchCell.reuseIdentifier)
     }
     
-    func configureSearchBar(){
+    private func configureSearchBar(){
         searchBar.delegate = self
     }
     

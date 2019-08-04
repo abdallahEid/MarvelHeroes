@@ -11,7 +11,7 @@ import UIKit
 
 class ImageAPIs {
     
-    let marvelClient = MarvelClient()
+    private let marvelClient = MarvelClient()
 
     func downloadImageFrom(url: URL,  completion: @escaping (Data?, Error?) -> Void) {
         marvelClient.request(url: url , httpMethod: .get) { (data, response, error) in

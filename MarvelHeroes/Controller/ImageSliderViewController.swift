@@ -38,7 +38,7 @@ class ImageSliderViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func configureCollectionView(){
+    private func configureCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(CharacterSourceCell.nib, forCellWithReuseIdentifier: CharacterSourceCell.reuseIdentifier)

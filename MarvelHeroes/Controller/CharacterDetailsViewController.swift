@@ -66,7 +66,7 @@ class CharacterDetailsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func addBlurBackground(){
+    private func addBlurBackground(){
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
@@ -74,7 +74,7 @@ class CharacterDetailsViewController: UIViewController {
         view.insertSubview(blurEffectView, at: 1)
     }
     
-    func configureCharacter(){
+    private func configureCharacter(){
         characterNameLabel.text = character?.name
         characterDescriptionLabel.text = character?.description
         if let thumbnail = character?.thumbnail {
@@ -89,7 +89,7 @@ class CharacterDetailsViewController: UIViewController {
         bluredImageView.alpha = 0.2
     }
     
-    func configureCollectionView(collectionView: UICollectionView){
+    private func configureCollectionView(collectionView: UICollectionView){
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(CharacterSourceCell.nib, forCellWithReuseIdentifier: CharacterSourceCell.reuseIdentifier)

@@ -18,8 +18,8 @@ extension ImageSliderViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterSourceCell.reuseIdentifier, for: indexPath) as! CharacterSourceCell
         
-        cell.sourceNameLabel.text = source[indexPath.row].title
         DispatchQueue.main.async {
+            cell.sourceNameLabel.text = self.source[indexPath.row].title
             if let image = self.source[indexPath.row].thumbnail {
                 cell.sourceImageView.sd_setImage(with: image.url)
             } else {
