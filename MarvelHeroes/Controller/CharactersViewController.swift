@@ -28,7 +28,7 @@ class CharactersViewController: UIViewController {
         
         configureNavbarLogo()
         configureTable()
-        DetermineGettingDataFromInternetOrCoreData()
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: NSNotification.Name(rawValue: "internet"), object: nil)
     }
     
     // MARK: IBAction & Functions
@@ -69,12 +69,16 @@ class CharactersViewController: UIViewController {
         tableView.reloadData()
     }
     
-    private func DetermineGettingDataFromInternetOrCoreData(){
-        if Reachability()!.isReachable {
-            deleteFromCoreData()
-            getCharacters(offset: 0)
-        } else {
-            loadFromCoreData()
+    @objc func onDidReceiveData(_ notification: Notification){
+        if let data = notification.userInfo as? [String: Bool]{
+            if let isConnected = data["isConnected"]{
+                if isConnected && characters.count == 0{
+                    deleteFromCoreData()
+                    getCharacters(offset: 0)
+                } else {
+                     loadFromCoreData()
+                }
+            }
         }
     }
 }

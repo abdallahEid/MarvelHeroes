@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func checkInternetConnection(){
         reachability.whenReachable = { reachability in
             AppDelegate.isConnectedToInternet = true
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "internet"), object: self, userInfo: ["isConnected": true])
             if reachability.connection == .wifi {
                 print("Reachable via WiFi")
             } else {
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         reachability.whenUnreachable = { _ in
             print("Not reachable")
             AppDelegate.isConnectedToInternet = false
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "internet"), object: self, userInfo: ["isConnected": false])
             var vc = self.window?.rootViewController
             while (vc?.presentedViewController != nil)
             {
